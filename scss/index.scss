@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+//font Lora
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap");
+
+//font Brain Wants
+
+@font-face {
+  src: url(../assets/font/brain.ttf);
+  font-family: "Brain";
+}
+
+// normalize and reset
+@import "base";
+
+// global
+@import "sass-utils";
+
+// list of components
+@import "components/buttons";
+@import "components/heading";
+@import "components/paragraph";
+@import "components/navigation";
+@import "components/section";
+@import "components/card";
+@import "components/overlay";
+@import "components/footer";
+@import "components/clinicDescription";
+@import "components/gallery";
+@import "components/avatar";
+@import "components/loader";
+@import "components/modal";
+@import "components/carousel";
+@import "components/video";
+
+// pages
+
+@import "pages/hero";
+@import "pages/services";
+@import "pages/aboutUsSection";
+@import "pages/aboutUs";
+@import "pages/specializations";
+@import "pages/clinic";
+@import "pages/specific_clinic";
+@import "pages/person";
+@import "pages/contact";
+
+

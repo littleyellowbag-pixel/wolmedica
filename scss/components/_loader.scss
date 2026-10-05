@@ -1,0 +1,14 @@
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 200vh;
+  pointer-events: none;
+  // background-color: #e3d5a7;
+  background: $gradient;
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+}
+
+//dawniejszy kolor
+//background-color: #d1e8ff;

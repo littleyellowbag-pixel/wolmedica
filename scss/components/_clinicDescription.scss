@@ -1,0 +1,121 @@
+.clinicDescription {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  gap: 10rem;
+  background: $white;
+
+  .video {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__imgWrapper {
+    position: relative;
+
+    &__logo {
+      position: absolute;
+      width: 110px;
+      top: -15px;
+      right: -15px;
+      object-fit: cover;
+      border-radius: map-get($borderRadius, l);
+      box-shadow: map-get($boxShadow, small);
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: map-get($borderRadius, l);
+    }
+
+    .medicover {
+      height: 60%;
+    }
+
+    .diagnostyka {
+      height: 60%;
+    }
+
+    .bon {
+      height: 50%;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: map-get($borderRadius, l);
+  }
+  &__description {
+    &__title {
+      margin-bottom: 2rem;
+    }
+    &__content {
+      max-width: 80%;
+    }
+  }
+
+  &__button {
+    padding: 2rem;
+    font-size: map-get($fontSize, m);
+    font-weight: 800;
+    margin: 0 auto;
+    &__description {
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__map {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin: 5rem auto;
+    text-align: center;
+    border-radius: map-get($borderRadius, l);
+    overflow: hidden;
+  }
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: unset;
+
+    &__imgWrapper {
+      &__logo {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &__description {
+      &__title,
+      &__content {
+        text-align: center;
+        margin: 2rem auto;
+      }
+    }
+    &__map {
+      max-height: 300px;
+      margin-top: 3rem;
+    }
+
+    &__button {
+      font-size: map-get($fontSize, s);
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+  @include media(mobile) {
+    &__imgWrapper {
+      &__logo {
+        max-width: 65px;
+      }
+    }
+  }
+}

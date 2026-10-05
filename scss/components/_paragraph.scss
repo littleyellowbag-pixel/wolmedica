@@ -1,0 +1,28 @@
+.paragraph {
+    font-size: map-get($fontSize, m);
+    line-height: 150%;
+    color: $primary;
+    letter-spacing: 0.7px;
+    &--isBig {
+        font-size: map-get($fontSize, l);
+    }
+
+    @include media(tablet) {
+        font-size: map-get($fontSize, s);
+
+        &--isBig {
+            font-size: map-get($fontSize, m);
+        }
+    }
+
+    @include media(mobile) {
+        font-size: map-get($fontSize, s);
+
+        &--isBig {
+            font-size: map-get($fontSize, m);
+        }
+    }
+    &--center {
+        text-align:center;
+    }
+}

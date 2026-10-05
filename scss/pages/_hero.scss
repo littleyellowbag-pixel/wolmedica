@@ -1,0 +1,53 @@
+.hero {
+  display: grid;
+  grid-template-areas:
+    "zag zag zag blood"
+    "tur tur tur tur"
+    "piek piek piek piek";
+  gap: 2rem;
+  min-height: 90vh;
+  padding: 7rem 10rem;
+
+  .zag {
+    grid-area: zag;
+  }
+
+  .blood {
+    grid-area: blood;
+  }
+
+  .tur {
+    grid-area: tur;
+  }
+
+  .piek {
+    grid-area: piek;
+  }
+
+  .hero > a {
+    flex-grow: 1;
+  }
+}
+
+.hero .card {
+  min-height: 60vh;
+}
+
+@include media(tablet) {
+  .hero .card {
+    min-height: 200px;
+  }
+}
+
+@include media(mobile) {
+  .hero {
+    padding: 2rem;
+    grid-template-areas:
+      "zag zag zag zag zag zag blood blood blood blood"
+      "tur tur tur tur tur  tur tur tur tur tur"
+      "piek piek piek piek piek piek piek piek piek piek";
+  }
+  .third-col {
+    transform: translateX(0);
+  }
+}
