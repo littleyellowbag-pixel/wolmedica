@@ -310,6 +310,7 @@ function init() {
           loaderAway();
           injectWidget();
           initHamburger(container);
+          setCurrentYear(container);
           const carouselDiv = container.querySelector(".carousel");
           if (carouselDiv) {
             carousel = new Carousel(container);
@@ -322,6 +323,7 @@ function init() {
         once({ next }) {
           const container = next.container;
           initHamburger(container);
+          setCurrentYear(container);
           homeAnimation(container);
           const carouselDiv = container.querySelector(".carousel");
           if (carouselDiv) {
@@ -359,6 +361,14 @@ function init() {
     }
   });
 }
+// FOOTER - CURRENT YEAR
+function setCurrentYear(container) {
+  const year = new Date().getFullYear();
+  container.querySelectorAll("[data-current-year]").forEach((el) => {
+    el.textContent = year;
+  });
+}
+
 // ZNANY LEKARZ - WIDGET
 function injectWidget() {
   !(function ($_x, _s, id) {
