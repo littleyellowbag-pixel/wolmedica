@@ -1,0 +1,154 @@
+.news {
+  &__item {
+    max-width: 1000px;
+    margin: 4rem auto 0;
+    padding: 5rem;
+    background: $white;
+    border-radius: map-get($borderRadius, l);
+    box-shadow: map-get($boxShadow, card);
+    border-top: 4px solid $blue;
+  }
+
+  &__date {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background: $lightBlue;
+    color: $secondary;
+    border-radius: map-get($borderRadius, s);
+    font-size: map-get($fontSize, s);
+    font-weight: 700;
+    letter-spacing: 0.7px;
+  }
+
+  &__title {
+    font-size: calc(map-get($fontSize, l) + 0.4rem);
+    margin: 2rem 0;
+  }
+
+  &__subtitle {
+    margin: 4rem 0 2rem;
+  }
+
+  &__content {
+    margin-bottom: 2rem;
+  }
+
+  &__highlight {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 3rem 0;
+    padding: 2rem 2.5rem;
+    background: rgba($lightBlue, 0.35);
+    border-left: 4px solid $blue;
+    border-radius: map-get($borderRadius, s);
+
+    strong {
+      font-weight: 700;
+      background: none;
+    }
+  }
+
+  &__mail {
+    color: $blue;
+    font-weight: 700;
+    word-break: break-all;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__attachments {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__attachment {
+    &__link {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.5rem 2rem;
+      border: 1px solid $lightGrey;
+      border-radius: map-get($borderRadius, m);
+      transition: all 0.2s ease;
+
+      &:hover {
+        border-color: $blue;
+        box-shadow: map-get($boxShadow, small);
+
+        .news__attachment__download {
+          background-color: transparent;
+          color: $blue;
+        }
+      }
+    }
+
+    &__type {
+      flex-shrink: 0;
+      width: 5.6rem;
+      padding: 0.8rem 0;
+      text-align: center;
+      border-radius: map-get($borderRadius, s);
+      color: $white;
+      font-size: map-get($fontSize, xs);
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      &--pdf {
+        background: #c0392b;
+      }
+
+      &--docx {
+        background: #2b579a;
+      }
+    }
+
+    &__name {
+      flex-grow: 1;
+    }
+
+    &__download {
+      flex-shrink: 0;
+      padding: 0.8rem 1.6rem;
+      background-color: $blue;
+      border: 2px solid $blue;
+      border-radius: map-get($borderRadius, s);
+      color: $white;
+      font-size: map-get($fontSize, s);
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+  }
+
+  @include media(tablet) {
+    &__item {
+      margin-top: 2rem;
+      padding: 3rem 2rem;
+    }
+
+    &__title {
+      font-size: map-get($fontSize, m);
+    }
+  }
+
+  @include media(mobile) {
+    &__attachment {
+      &__link {
+        flex-wrap: wrap;
+        gap: 1rem 1.5rem;
+        padding: 1.5rem;
+      }
+
+      &__name {
+        flex-basis: calc(100% - 7.1rem);
+      }
+
+      &__download {
+        margin-left: 7.1rem;
+      }
+    }
+  }
+}
