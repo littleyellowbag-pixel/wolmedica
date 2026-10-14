@@ -85,14 +85,18 @@ a.button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
+    padding: 1.3rem;
     border-radius: 50%;
-    background: $nfz;
-    color: $white;
-    font-size: 2.8rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+    background: $white;
+    border: 2px solid $lightBlue;
+    box-shadow: map-get($boxShadow, small);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__title {
@@ -118,9 +122,9 @@ a.button {
     text-align: center;
 
     &__logo {
-      width: 7rem;
-      height: 7rem;
-      font-size: 2rem;
+      width: 9rem;
+      height: 9rem;
+      padding: 1rem;
     }
 
     &__actions {

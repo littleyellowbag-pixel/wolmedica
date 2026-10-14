@@ -310,6 +310,13 @@
   }
 }
 
+// menu z pozycją NFZ musi się zmieścić w maks. 1400px szerokości nawigacji
+@include media(desktop) {
+  .navigation__list {
+    gap: 2rem;
+  }
+}
+
 // węższe ekrany desktopowe – menu z pozycją NFZ musi się zmieścić
 @media (min-width: $breakpoint-desktop) and (max-width: 1439px) {
   .navigation {
