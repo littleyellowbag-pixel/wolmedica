@@ -221,10 +221,6 @@
 // rozwijane menu NFZ
 
 .navigation__dropdown {
-  @include media(desktop) {
-    margin-left: 3rem;
-  }
-
   &__menu {
     position: absolute;
     top: 100%;
@@ -310,29 +306,56 @@
   }
 }
 
-// menu z pozycją NFZ musi się zmieścić w maks. 1400px szerokości nawigacji
+// mniejsze logo na desktopie – więcej miejsca na pozycje menu (w tym NFZ)
 @include media(desktop) {
-  .navigation__list {
-    gap: 2rem;
-  }
-}
-
-// węższe ekrany desktopowe – menu z pozycją NFZ musi się zmieścić
-@media (min-width: $breakpoint-desktop) and (max-width: 1439px) {
   .navigation {
-    gap: 1rem;
-    padding: 2rem 1.5rem;
+    gap: 2rem;
 
     &__logo {
       margin-right: 0;
+      // miejsce na obrazek logo, który wystaje poza napis
+      padding-right: 5.5rem;
+      font-size: 2.6rem;
+
+      &--logo-img-1 {
+        width: 52px;
+        top: -15px;
+        left: 152px;
+      }
     }
+
+    &__list {
+      flex-grow: 1;
+      gap: 2.6rem;
+    }
+  }
+}
+
+// węższe ekrany desktopowe
+@media (min-width: $breakpoint-desktop) and (max-width: 1439px) {
+  .navigation {
+    padding: 2rem 1.5rem;
+
+    &__container {
+      gap: 2.5rem;
+    }
+
+    &__list {
+      gap: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) and (max-width: 1260px) {
+  .navigation {
+    gap: 1.5rem;
 
     &__container {
       gap: 1.5rem;
     }
 
     &__list {
-      gap: 1.1rem;
+      gap: 0.8rem;
 
       &__element {
         font-size: map-get($fontSize, xs);
@@ -343,35 +366,5 @@
       padding: 1rem 1.4rem;
       font-size: map-get($fontSize, s);
     }
-  }
-
-  .navigation__dropdown {
-    margin-left: 2.5rem;
-  }
-}
-
-@media (min-width: $breakpoint-desktop) and (max-width: 1180px) {
-  .navigation {
-    &__logo {
-      font-size: 2.8rem;
-
-      &--logo-img-1 {
-        width: 56px;
-        top: -14px;
-        left: 165px;
-      }
-    }
-
-    &__container {
-      gap: 1rem;
-    }
-
-    &__list {
-      gap: 0.5rem;
-    }
-  }
-
-  .navigation__dropdown {
-    margin-left: 4.5rem;
   }
 }
