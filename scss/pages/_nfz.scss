@@ -1,7 +1,10 @@
 // NFZ – oznaczenia, kafelki i podstrony świadczeń NFZ
 
-$nfz: #0b5ea8;
-$nfzLight: #e6eff8;
+// niebieski tylko dla etykiety NFZ przy lekarzach i świadczeniach,
+// pozostałe elementy sekcji NFZ w kolorystyce Wolmedica
+$nfzBadge: #0b5ea8;
+$nfz: $blue;
+$nfzLight: rgba($lightBlue, 0.35);
 
 .badge {
   display: inline-flex;
@@ -19,7 +22,7 @@ $nfzLight: #e6eff8;
   color: $secondary;
 
   &--nfz {
-    background: $nfz;
+    background: $nfzBadge;
     color: $white;
   }
 
@@ -29,6 +32,7 @@ $nfzLight: #e6eff8;
     color: $nfz;
   }
 
+  &--accent,
   &--private {
     background: $blue;
     color: $white;
@@ -41,34 +45,15 @@ $nfzLight: #e6eff8;
   }
 }
 
-// przyciski NFZ / prywatnie
+// przycisk drugorzędny (np. wizyta prywatna)
 
 .button {
-  &--nfz {
-    background-color: $nfz;
-    border-color: $nfz;
-
-    &:hover {
-      color: $nfz;
-    }
-  }
-
   &--ghost {
     background-color: transparent;
     color: $blue;
 
     &:hover {
       background-color: $blue;
-      color: $white;
-    }
-  }
-
-  &--nfz.button--ghost {
-    background-color: transparent;
-    color: $nfz;
-
-    &:hover {
-      background-color: $nfz;
       color: $white;
     }
   }
@@ -156,6 +141,7 @@ a.button {
   strong {
     font-weight: 700;
     background: none;
+    padding: 0;
   }
 
   [id] {

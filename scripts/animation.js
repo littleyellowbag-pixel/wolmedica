@@ -311,6 +311,7 @@ function init() {
           injectWidget();
           initHamburger(container);
           setCurrentYear(container);
+          equalizeDoctorCards(container);
           const carouselDiv = container.querySelector(".carousel");
           if (carouselDiv) {
             carousel = new Carousel(container);
@@ -324,6 +325,7 @@ function init() {
           const container = next.container;
           initHamburger(container);
           setCurrentYear(container);
+          equalizeDoctorCards(container);
           homeAnimation(container);
           const carouselDiv = container.querySelector(".carousel");
           if (carouselDiv) {
@@ -367,6 +369,22 @@ function setCurrentYear(container) {
   container.querySelectorAll("[data-current-year]").forEach((el) => {
     el.textContent = year;
   });
+}
+
+// NFZ - RÓWNA POCZĄTKOWA WYSOKOŚĆ KART LEKARZY
+function equalizeDoctorCards(container) {
+  container.querySelectorAll(".nfz__doctors").forEach((list) => {
+    const cards = [...list.querySelectorAll(".nfz__doctor")];
+    cards.forEach((card) => (card.style.minHeight = ""));
+    const closed = cards.filter((card) => !card.querySelector("details[open]"));
+    const maxHeight = Math.max(0, ...closed.map((card) => card.offsetHeight));
+    cards.forEach((card) => (card.style.minHeight = `${maxHeight}px`));
+  });
+}
+
+window.addEventListener("resize", () => equalizeDoctorCards(document));
+if (document.fonts) {
+  document.fonts.ready.then(() => equalizeDoctorCards(document));
 }
 
 // ZNANY LEKARZ - WIDGET

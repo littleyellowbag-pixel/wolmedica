@@ -2761,10 +2761,10 @@ main {
 }
 .badge--outline {
   background: transparent;
-  border: 1px solid #0b5ea8;
-  color: #0b5ea8;
+  border: 1px solid #b8982f;
+  color: #b8982f;
 }
-.badge--private {
+.badge--accent, .badge--private {
   background: #b8982f;
   color: #fff;
 }
@@ -2774,27 +2774,12 @@ main {
   gap: 0.8rem;
 }
 
-.button--nfz {
-  background-color: #0b5ea8;
-  border-color: #0b5ea8;
-}
-.button--nfz:hover {
-  color: #0b5ea8;
-}
 .button--ghost {
   background-color: transparent;
   color: #b8982f;
 }
 .button--ghost:hover {
   background-color: #b8982f;
-  color: #fff;
-}
-.button--nfz.button--ghost {
-  background-color: transparent;
-  color: #0b5ea8;
-}
-.button--nfz.button--ghost:hover {
-  background-color: #0b5ea8;
   color: #fff;
 }
 
@@ -2816,7 +2801,7 @@ a.button {
   background: #fff;
   border-radius: 2rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-top: 4px solid #0b5ea8;
+  border-top: 4px solid #b8982f;
 }
 .nfz-banner__logo {
   display: flex;
@@ -2825,7 +2810,7 @@ a.button {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
-  background: #0b5ea8;
+  background: #b8982f;
   color: #fff;
   font-size: 2.8rem;
   font-weight: 800;
@@ -2892,6 +2877,7 @@ a.button {
 .nfz strong {
   font-weight: 700;
   background: none;
+  padding: 0;
 }
 .nfz [id] {
   scroll-margin-top: calc(10rem + 2rem);
@@ -2993,15 +2979,15 @@ a.button {
   gap: 2rem;
   margin-top: 3rem;
   padding: 2.5rem 3rem;
-  background: #e6eff8;
-  border-left: 4px solid #0b5ea8;
+  background: rgba(227, 213, 167, 0.35);
+  border-left: 4px solid #b8982f;
   border-radius: 1rem;
 }
 .nfz__contact__phone {
   white-space: nowrap;
   font-size: 2rem;
   font-weight: 800;
-  color: #0b5ea8;
+  color: #b8982f;
 }
 @media all and (max-width: 1024.7px) {
   .nfz__contact {
@@ -3093,7 +3079,7 @@ a.button {
 }
 .nfz__tile__more {
   font-weight: 700;
-  color: #0b5ea8;
+  color: #b8982f;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -3334,7 +3320,7 @@ a.nfz__service:hover {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .nfz__box--accent {
-  border-top: 4px solid #0b5ea8;
+  border-top: 4px solid #b8982f;
 }
 .nfz__box > .heading:first-child {
   margin-top: 0;
@@ -3371,7 +3357,7 @@ a.nfz__service:hover {
   gap: 1.5rem;
   align-items: flex-start;
   padding: 2rem;
-  background: #e6eff8;
+  background: rgba(227, 213, 167, 0.35);
   border-radius: 1rem;
 }
 .nfz__step__number {
@@ -3382,13 +3368,13 @@ a.nfz__service:hover {
   width: 3.6rem;
   height: 3.6rem;
   border-radius: 50%;
-  background: #0b5ea8;
+  background: #b8982f;
   color: #fff;
   font-weight: 800;
   font-size: 1.5rem;
 }
 .nfz__step a {
-  color: #0b5ea8;
+  color: #b8982f;
   font-weight: 700;
   text-decoration: underline;
 }
@@ -3421,7 +3407,7 @@ a.nfz__service:hover {
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: #0b5ea8;
+  background: #b8982f;
   color: #fff;
   font-size: 2rem;
   font-weight: 800;
@@ -3609,15 +3595,15 @@ a.nfz__service:hover {
   gap: 1.2rem;
   margin-top: 2rem;
   padding: 2rem;
-  background: #e6eff8;
-  border-left: 4px solid #0b5ea8;
+  background: rgba(227, 213, 167, 0.35);
+  border-left: 4px solid #b8982f;
   border-radius: 1rem;
 }
 .person__nfz .badge {
   align-self: flex-start;
 }
 .person__nfz a:not(.button) {
-  color: #0b5ea8;
+  color: #b8982f;
   font-weight: 700;
 }
 .person__nfz a:not(.button):hover {
