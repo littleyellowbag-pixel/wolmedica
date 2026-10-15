@@ -217,3 +217,154 @@
     }
   }
 }
+
+// rozwijane menu NFZ
+
+.navigation__dropdown {
+  &__menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    z-index: 100;
+    min-width: 28rem;
+    padding-top: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, 1rem);
+    transition: all 0.2s ease;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      background: $white;
+      border-radius: map-get($borderRadius, s);
+      box-shadow: map-get($boxShadow, card);
+    }
+  }
+
+  &:hover,
+  &:focus-within {
+    .navigation__dropdown__menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  .navigation__list &__menu a {
+    display: block;
+    padding: 1.2rem 1.5rem;
+    border-radius: map-get($borderRadius, s);
+    color: $primary;
+    font-weight: 700;
+    white-space: nowrap;
+
+    &:hover {
+      background: rgba($lightBlue, 0.4);
+      color: $blue;
+    }
+  }
+
+  @include media(tablet) {
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__menu {
+      position: static;
+      min-width: unset;
+      padding-top: 0;
+      opacity: 1;
+      visibility: visible;
+      transform: none;
+
+      ul {
+        padding: 0;
+        gap: 0.5rem;
+        background: transparent;
+        box-shadow: none;
+        text-align: center;
+      }
+    }
+
+    &:hover,
+    &:focus-within {
+      .navigation__dropdown__menu {
+        transform: none;
+      }
+    }
+
+    .navigation__list &__menu a {
+      align-items: center;
+      padding: 0.8rem 1rem;
+      font-weight: 500;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
+
+// mniejsze logo na desktopie – więcej miejsca na pozycje menu (w tym NFZ)
+@include media(desktop) {
+  .navigation {
+    gap: 2rem;
+
+    &__logo {
+      margin-right: 0;
+      // miejsce na obrazek logo, który wystaje poza napis
+      padding-right: 5.5rem;
+      font-size: 2.6rem;
+
+      &--logo-img-1 {
+        width: 52px;
+        top: -15px;
+        left: 152px;
+      }
+    }
+
+    &__list {
+      flex-grow: 1;
+      gap: 2.6rem;
+    }
+  }
+}
+
+// węższe ekrany desktopowe
+@media (min-width: $breakpoint-desktop) and (max-width: 1439px) {
+  .navigation {
+    padding: 2rem 1.5rem;
+
+    &__container {
+      gap: 2.5rem;
+    }
+
+    &__list {
+      gap: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: $breakpoint-desktop) and (max-width: 1260px) {
+  .navigation {
+    gap: 1.5rem;
+
+    &__container {
+      gap: 1.5rem;
+    }
+
+    &__list {
+      gap: 0.8rem;
+
+      &__element {
+        font-size: map-get($fontSize, xs);
+      }
+    }
+
+    &__button {
+      padding: 1rem 1.4rem;
+      font-size: map-get($fontSize, s);
+    }
+  }
+}
