@@ -1535,3 +1535,12 @@ a.button {
     text-align: center;
   }
 }
+
+.nfz__box__graphic {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 2rem;
+  border-radius: map-get($borderRadius, s);
+  box-shadow: map-get($boxShadow, small);
+}

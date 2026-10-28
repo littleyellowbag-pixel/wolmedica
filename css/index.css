@@ -4285,4 +4285,13 @@ a.nfz__service:hover {
   text-align: center;
 }
 
+.nfz__box__graphic {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
 /*# sourceMappingURL=index.css.map */
