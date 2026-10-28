@@ -660,7 +660,8 @@ a.button {
 
   &__flow {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
     gap: 2rem;
     margin-top: 2rem;
     counter-reset: flow;
@@ -706,6 +707,7 @@ a.button {
     }
 
     @include media(tablet) {
+      grid-auto-flow: row;
       grid-template-columns: 1fr;
       gap: 3rem;
       max-width: 420px;
@@ -1071,38 +1073,6 @@ a.button {
 
     .nfz__service__icon {
       grid-row: span 2;
-    }
-  }
-
-  // pionowy schemat (7 kroków)
-
-  &__flow--vertical {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    max-width: 560px;
-    margin-left: auto;
-    margin-right: auto;
-
-    .nfz__flow__item {
-      flex-direction: row;
-      text-align: left;
-      padding: 1.5rem 2.5rem;
-
-      &::before {
-        flex-shrink: 0;
-        width: 3.6rem;
-        height: 3.6rem;
-        font-size: map-get($fontSize, m);
-      }
-
-      &:not(:last-child)::after {
-        content: "↓";
-        top: auto;
-        right: auto;
-        bottom: -3rem;
-        left: 50%;
-        transform: translateX(-50%);
-      }
     }
   }
 

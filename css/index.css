@@ -3396,7 +3396,8 @@ a.nfz__service:hover {
 }
 .nfz__flow {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   gap: 2rem;
   margin-top: 2rem;
   counter-reset: flow;
@@ -3440,6 +3441,7 @@ a.nfz__service:hover {
 }
 @media all and (max-width: 1024.7px) {
   .nfz__flow {
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
     gap: 3rem;
     max-width: 420px;
@@ -3468,6 +3470,7 @@ a.nfz__service:hover {
 }
 @media all and (tablet) {
   .nfz__flow {
+    grid-auto-flow: row;
     grid-template-columns: 1fr;
     gap: 3rem;
     max-width: 420px;
@@ -3821,32 +3824,6 @@ a.nfz__service:hover {
 }
 .nfz__benefit .nfz__service__icon {
   grid-row: span 2;
-}
-.nfz__flow--vertical {
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  max-width: 560px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.nfz__flow--vertical .nfz__flow__item {
-  flex-direction: row;
-  text-align: left;
-  padding: 1.5rem 2.5rem;
-}
-.nfz__flow--vertical .nfz__flow__item::before {
-  flex-shrink: 0;
-  width: 3.6rem;
-  height: 3.6rem;
-  font-size: 1.5rem;
-}
-.nfz__flow--vertical .nfz__flow__item:not(:last-child)::after {
-  content: "↓";
-  top: auto;
-  right: auto;
-  bottom: -3rem;
-  left: 50%;
-  transform: translateX(-50%);
 }
 .nfz__alert {
   max-width: 900px;
