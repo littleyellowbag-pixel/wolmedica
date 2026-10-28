@@ -1470,13 +1470,6 @@ a.button {
     justify-content: flex-start;
     margin-bottom: 1rem;
   }
-
-  // na telefonie opis karty lekarza jest wyśrodkowany – oznaczenia razem z nim
-  .avatar & {
-    @include media(mobile) {
-      justify-content: center;
-    }
-  }
 }
 
 // zdjęcia placówki obok treści i z podpisami

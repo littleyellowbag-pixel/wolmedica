@@ -4211,11 +4211,6 @@ a.nfz__service:hover {
   justify-content: flex-start;
   margin-bottom: 1rem;
 }
-@media all and (max-width: 480px) {
-  .avatar .access {
-    justify-content: center;
-  }
-}
 
 .nfz__split--photo {
   grid-template-columns: 3fr 2fr;
