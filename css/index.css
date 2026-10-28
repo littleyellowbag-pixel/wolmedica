@@ -3621,6 +3621,7 @@ a.nfz__service:hover {
 .person__nfz a:not(.button) {
   color: #b8982f;
   font-weight: 700;
+  white-space: nowrap;
 }
 .person__nfz a:not(.button):hover {
   text-decoration: underline;

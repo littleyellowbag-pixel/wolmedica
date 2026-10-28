@@ -850,6 +850,7 @@ a.button {
   a:not(.button) {
     color: $nfz;
     font-weight: 700;
+    white-space: nowrap;
 
     &:hover {
       text-decoration: underline;
