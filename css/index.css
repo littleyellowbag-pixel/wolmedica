@@ -4270,4 +4270,19 @@ a.nfz__service:hover {
   }
 }
 
+.nfz__figure {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+}
+.nfz__figure img {
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.nfz__figure figcaption {
+  margin-top: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 /*# sourceMappingURL=index.css.map */
