@@ -856,3 +856,617 @@ a.button {
     }
   }
 }
+
+// rozbudowane sekcje NFZ: godziny, ścieżki opieki koordynowanej, profilaktyka, HPV
+
+.nfz {
+  &__contact__phone--big {
+    display: inline-block;
+    margin: 0.5rem 0 1.5rem;
+    font-size: map-get($fontSize, xl);
+    line-height: 1.2;
+
+    @include media(mobile) {
+      font-size: 2.8rem;
+    }
+  }
+
+  &__hours {
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    margin: 2rem 0;
+    border-radius: map-get($borderRadius, s);
+    overflow: hidden;
+    background: $nfzLight;
+
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.2rem 2rem;
+      font-size: map-get($fontSize, m);
+
+      &:not(:last-child) {
+        border-bottom: 1px solid rgba($blue, 0.25);
+      }
+    }
+
+    dt {
+      font-weight: 500;
+    }
+
+    dd {
+      margin: 0;
+      font-weight: 800;
+      color: $nfz;
+      white-space: nowrap;
+    }
+  }
+
+  &__steps--stacked {
+    grid-template-columns: 1fr;
+  }
+
+  &__box--feature {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 3rem;
+    align-items: start;
+
+    .nfz__service__icon {
+      width: 64px;
+      height: 64px;
+    }
+
+    .heading--isBig {
+      margin-top: 0;
+    }
+
+    @include media(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+
+      .nfz__service__icon {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  &__box--wide {
+    grid-column: 1 / -1;
+  }
+
+  &__subheading {
+    margin-top: 6rem;
+
+    @include media(tablet) {
+      margin-top: 4rem;
+    }
+  }
+
+  // rozwijane „Dowiedz się więcej” w kafelkach
+  &__path__more,
+  &__program__more {
+    margin-top: auto;
+    padding-top: 1rem;
+
+    summary {
+      display: inline-block;
+      cursor: pointer;
+      font-size: map-get($fontSize, s);
+      font-weight: 700;
+      color: $blue;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      list-style: none;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &::after {
+        content: " +";
+      }
+    }
+
+    &[open] summary {
+      margin-bottom: 1rem;
+
+      &::after {
+        content: " −";
+      }
+    }
+
+    .paragraph + .paragraph {
+      margin-top: 1rem;
+    }
+  }
+
+  // 5 ścieżek opieki koordynowanej
+
+  &__paths {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    align-items: start;
+
+    @include media(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+
+  &__path {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+    padding: 2.5rem;
+    background: $white;
+    border-top: 4px solid $nfz;
+    border-radius: map-get($borderRadius, s);
+    box-shadow: map-get($boxShadow, small);
+
+    &__title {
+      margin: 0;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      overflow-wrap: anywhere;
+    }
+
+    &__subtitle {
+      font-weight: 700;
+      color: $blue;
+    }
+
+    &__doctor {
+      margin-top: 1rem;
+      padding: 1rem 1.5rem;
+      background: $nfzLight;
+      border-radius: map-get($borderRadius, s);
+      font-weight: 700;
+    }
+
+    @include media(mobile) {
+      padding: 2rem;
+    }
+  }
+
+  &__footnote {
+    margin-top: 2rem;
+    font-size: map-get($fontSize, s);
+    font-style: italic;
+    text-align: center;
+  }
+
+  // co daje opieka koordynowana
+
+  &__benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+
+    @include media(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include media(mobile) {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+
+  &__benefit {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+    padding: 2rem;
+    background: $nfzLight;
+    border-radius: map-get($borderRadius, s);
+
+    .nfz__service__icon {
+      grid-row: span 2;
+    }
+  }
+
+  // pionowy schemat (7 kroków)
+
+  &__flow--vertical {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .nfz__flow__item {
+      flex-direction: row;
+      text-align: left;
+      padding: 1.5rem 2.5rem;
+
+      &::before {
+        flex-shrink: 0;
+        width: 3.6rem;
+        height: 3.6rem;
+        font-size: map-get($fontSize, m);
+      }
+
+      &:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: auto;
+        bottom: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  // wyróżniony komunikat
+
+  &__alert {
+    max-width: 900px;
+    margin: 5rem auto 0;
+    padding: 4rem;
+    background: $nfzLight;
+    border: 2px solid $nfz;
+    border-radius: map-get($borderRadius, l);
+    text-align: center;
+
+    > .heading {
+      margin-top: 0;
+    }
+
+    .paragraph + .paragraph {
+      margin-top: 1.5rem;
+    }
+
+    .nfz__actions {
+      margin-top: 2.5rem;
+    }
+
+    &__label {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: map-get($borderRadius, s);
+      background: $nfz;
+      color: $white;
+      font-size: map-get($fontSize, s);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    @include media(tablet) {
+      margin-top: 3rem;
+      padding: 2.5rem 2rem;
+    }
+  }
+
+  &__more-link {
+    margin-top: 4rem;
+  }
+
+  // Moje Zdrowie i ChUK
+
+  &__programs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+
+    @include media(tablet) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  &__program {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 4rem;
+    background: $white;
+    border-top: 4px solid $nfz;
+    border-radius: map-get($borderRadius, l);
+    box-shadow: map-get($boxShadow, card);
+
+    .nfz__service__icon {
+      width: 56px;
+      height: 56px;
+    }
+
+    &__title {
+      margin: 0;
+      font-size: map-get($fontSize, xl);
+      line-height: 1.2;
+    }
+
+    &__subtitle {
+      font-weight: 800;
+      color: $blue;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    @include media(tablet) {
+      padding: 2.5rem 2rem;
+
+      &__title {
+        font-size: 2.6rem;
+      }
+    }
+  }
+
+  &__chain {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3rem;
+    margin: 2rem 0;
+
+    li {
+      position: relative;
+      padding: 0.8rem 1.4rem;
+      border-radius: map-get($borderRadius, s);
+      background: $nfzLight;
+      font-size: map-get($fontSize, s);
+      font-weight: 800;
+      text-transform: uppercase;
+
+      &:not(:last-child)::after {
+        content: "→";
+        position: absolute;
+        top: 50%;
+        right: -2.2rem;
+        transform: translateY(-50%);
+        color: $blue;
+        font-weight: 800;
+      }
+    }
+
+    @include media(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2.4rem;
+
+      li:not(:last-child)::after {
+        content: "↓";
+        top: auto;
+        right: auto;
+        bottom: -2.2rem;
+        left: 2rem;
+        transform: none;
+      }
+    }
+  }
+
+  // zdjęcia z placówki
+
+  &__photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+
+    img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: map-get($borderRadius, l);
+    }
+
+    @include media(tablet) {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+
+      img {
+        height: 200px;
+      }
+    }
+  }
+
+  &__doctor__note {
+    font-size: map-get($fontSize, xs);
+    line-height: 1.4;
+    text-align: center;
+    color: $primary;
+  }
+
+  // profilaktyka raka szyjki macicy
+
+  &__hpv {
+    .nfz__intro .badge {
+      margin-bottom: 1rem;
+    }
+
+    &__layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 3rem;
+      align-items: start;
+
+      @include media(tablet) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+
+    &__scheme {
+      padding: 4rem;
+      background: $white;
+      border-radius: map-get($borderRadius, l);
+      box-shadow: map-get($boxShadow, card);
+
+      > .heading {
+        margin-top: 0;
+      }
+
+      @include media(tablet) {
+        padding: 2.5rem 2rem;
+      }
+    }
+
+    &__steps {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+      margin: 2rem 0 3rem;
+    }
+
+    &__step {
+      position: relative;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+      padding: 2rem;
+      background: $nfzLight;
+      border-radius: map-get($borderRadius, s);
+
+      &::after {
+        content: "↓";
+        position: absolute;
+        bottom: -2.9rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: $blue;
+        font-size: map-get($fontSize, l);
+        font-weight: 800;
+      }
+    }
+
+    &__num {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 3.6rem;
+      height: 3.6rem;
+      padding: 0 0.6rem;
+      border-radius: 1.8rem;
+      background: $nfz;
+      color: $white;
+      font-weight: 800;
+      font-size: map-get($fontSize, m);
+    }
+
+    &__title {
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    &__branches {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+
+      @include media(mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__branch {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+      border-radius: map-get($borderRadius, s);
+      border: 2px solid $lightBlue;
+
+      .nfz__hpv__num {
+        align-self: flex-start;
+      }
+
+      &--negative {
+        background: #f1f7f1;
+        border-color: #9cc59c;
+
+        .nfz__hpv__num {
+          background: #4f8f4f;
+        }
+      }
+
+      &--positive {
+        background: #fbf4ea;
+        border-color: $blue;
+      }
+    }
+
+    &__tile {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      padding: 3rem;
+      background: $white;
+      border-top: 4px solid $nfzBadge;
+      border-radius: map-get($borderRadius, l);
+      box-shadow: map-get($boxShadow, card);
+
+      &__title {
+        margin: 0;
+        text-transform: uppercase;
+      }
+
+      &__age {
+        font-size: map-get($fontSize, xl);
+        font-weight: 800;
+        color: $nfz;
+        line-height: 1.2;
+      }
+
+      &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+
+        li {
+          padding-left: 2rem;
+          position: relative;
+
+          &::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: $nfz;
+            font-weight: 800;
+          }
+        }
+      }
+
+      &__hint {
+        font-size: map-get($fontSize, xs);
+        font-weight: 700;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      @include media(tablet) {
+        padding: 2.5rem 2rem;
+      }
+    }
+  }
+}
+
+// oznaczenie NFZ / Prywatnie przy lekarzach (karty „avatar” i profile)
+
+.access {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+
+  .badge {
+    padding: 0.3rem 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  &--left {
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+  }
+}
