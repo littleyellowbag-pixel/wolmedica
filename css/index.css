@@ -3874,7 +3874,7 @@ a.nfz__service:hover {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  align-items: start;
+  align-items: stretch;
 }
 @media all and (max-width: 1024.7px) {
   .nfz__programs {
