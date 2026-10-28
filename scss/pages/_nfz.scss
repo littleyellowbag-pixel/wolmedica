@@ -1544,3 +1544,7 @@ a.button {
   border-radius: map-get($borderRadius, s);
   box-shadow: map-get($boxShadow, small);
 }
+
+.nfz__alert__strong {
+  font-weight: 700;
+}

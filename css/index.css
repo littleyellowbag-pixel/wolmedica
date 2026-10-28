@@ -4294,4 +4294,8 @@ a.nfz__service:hover {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+.nfz__alert__strong {
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=index.css.map */
