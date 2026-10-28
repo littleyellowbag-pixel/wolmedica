@@ -1518,3 +1518,9 @@ a.button {
 .nfz__alert__strong {
   font-weight: 700;
 }
+
+// odstęp przycisków w nagłówku podstron NFZ
+.nfz__hero > div > .nfz__actions {
+  margin-top: 3rem;
+  gap: 2rem;
+}

@@ -4275,4 +4275,9 @@ a.nfz__service:hover {
   font-weight: 700;
 }
 
+.nfz__hero > div > .nfz__actions {
+  margin-top: 3rem;
+  gap: 2rem;
+}
+
 /*# sourceMappingURL=index.css.map */
