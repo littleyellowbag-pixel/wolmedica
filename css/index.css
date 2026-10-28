@@ -4199,7 +4199,7 @@ a.nfz__service:hover {
 .access {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.6rem;
   margin-top: 1rem;
 }
@@ -4210,6 +4210,11 @@ a.nfz__service:hover {
 .access--left {
   justify-content: flex-start;
   margin-bottom: 1rem;
+}
+@media all and (max-width: 480px) {
+  .avatar .access {
+    justify-content: center;
+  }
 }
 
 .nfz__split--photo {

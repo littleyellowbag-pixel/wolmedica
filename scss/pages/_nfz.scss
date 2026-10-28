@@ -1457,7 +1457,7 @@ a.button {
 .access {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.6rem;
   margin-top: 1rem;
 
@@ -1469,6 +1469,13 @@ a.button {
   &--left {
     justify-content: flex-start;
     margin-bottom: 1rem;
+  }
+
+  // na telefonie opis karty lekarza jest wyśrodkowany – oznaczenia razem z nim
+  .avatar & {
+    @include media(mobile) {
+      justify-content: center;
+    }
   }
 }
 
