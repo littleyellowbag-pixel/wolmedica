@@ -1524,3 +1524,66 @@ a.button {
   margin-top: 3rem;
   gap: 2rem;
 }
+
+// sekcje lokalizacji: diagnostyka piersi, badanie nasienia
+
+.badge__list--center {
+  justify-content: center;
+}
+
+.nfz__services--two,
+.nfz__services--one {
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  .badge__list {
+    margin-top: auto;
+    padding-top: 0.5rem;
+  }
+
+  @include media(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nfz__services--one {
+  max-width: 440px;
+}
+
+.nfz__doctors--compact {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
+  justify-content: center;
+
+  @include media(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nfz__doctors--single {
+  grid-template-columns: 1fr;
+}
+
+.nfz__doctor__services {
+  font-weight: 700;
+}
+
+.nfz__split--info {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 4rem auto 0;
+}
+
+.nfz__split--photo-left {
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+
+  .nfz__box > .heading + .nfz__list,
+  .nfz__list + .heading {
+    margin-top: 1.5rem;
+  }
+
+  @include media(tablet) {
+    grid-template-columns: 1fr;
+  }
+}

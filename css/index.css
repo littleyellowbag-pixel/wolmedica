@@ -4280,4 +4280,73 @@ a.nfz__service:hover {
   gap: 2rem;
 }
 
+.badge__list--center {
+  justify-content: center;
+}
+
+.nfz__services--two,
+.nfz__services--one {
+  max-width: 900px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.nfz__services--two .badge__list,
+.nfz__services--one .badge__list {
+  margin-top: auto;
+  padding-top: 0.5rem;
+}
+@media all and (max-width: 480px) {
+  .nfz__services--two,
+.nfz__services--one {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nfz__services--one {
+  max-width: 440px;
+}
+
+.nfz__doctors--compact {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 420px));
+  justify-content: center;
+}
+@media all and (max-width: 480px) {
+  .nfz__doctors--compact {
+    grid-template-columns: 1fr;
+  }
+}
+
+.nfz__doctors--single {
+  grid-template-columns: 1fr;
+}
+
+.nfz__doctor__services {
+  font-weight: 700;
+}
+
+.nfz__split--info {
+  grid-template-columns: 1fr;
+  max-width: 900px;
+  margin: 4rem auto 0;
+}
+
+.nfz__split--photo-left {
+  grid-template-columns: 1fr 2fr;
+  align-items: start;
+}
+.nfz__split--photo-left .nfz__box > .heading + .nfz__list,
+.nfz__split--photo-left .nfz__list + .heading {
+  margin-top: 1.5rem;
+}
+@media all and (max-width: 1024.7px) {
+  .nfz__split--photo-left {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (tablet) {
+  .nfz__split--photo-left {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */
