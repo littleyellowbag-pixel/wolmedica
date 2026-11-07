@@ -1587,3 +1587,61 @@ a.button {
     grid-template-columns: 1fr;
   }
 }
+
+// baner NFZ na górze strony głównej – nad filmem
+.section--nfz-top {
+  padding-top: calc(#{$nav-desktop-height} + 1rem);
+  padding-bottom: 3rem;
+  min-height: unset;
+
+  .nfz-banner {
+    margin-top: 0;
+  }
+
+  @include media(tablet) {
+    padding-top: calc(#{$nav-mobile-height} + 1rem);
+    padding-bottom: 2rem;
+  }
+}
+
+.section--nfz-top + .carousel {
+  top: 0;
+}
+
+// strona RODO
+
+.nfz__legal {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+
+  > .paragraph {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.nfz__legal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 2.5rem;
+  list-style: decimal;
+
+  a {
+    color: $blue;
+    font-weight: 700;
+    word-break: break-word;
+  }
+
+  .nfz__list {
+    margin: 1rem 0;
+  }
+}
+
+.footer__legal {
+  color: inherit;
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

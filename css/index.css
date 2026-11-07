@@ -4349,4 +4349,61 @@ a.nfz__service:hover {
   }
 }
 
+.section--nfz-top {
+  padding-top: calc(10rem + 1rem);
+  padding-bottom: 3rem;
+  min-height: unset;
+}
+.section--nfz-top .nfz-banner {
+  margin-top: 0;
+}
+@media all and (max-width: 1024.7px) {
+  .section--nfz-top {
+    padding-top: calc(8rem + 1rem);
+    padding-bottom: 2rem;
+  }
+}
+@media all and (tablet) {
+  .section--nfz-top {
+    padding-top: calc(8rem + 1rem);
+    padding-bottom: 2rem;
+  }
+}
+
+.section--nfz-top + .carousel {
+  top: 0;
+}
+
+.nfz__legal {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+}
+.nfz__legal > .paragraph {
+  margin-bottom: 1.5rem;
+}
+
+.nfz__legal__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding-left: 2.5rem;
+  list-style: decimal;
+}
+.nfz__legal__list a {
+  color: #b8982f;
+  font-weight: 700;
+  word-break: break-word;
+}
+.nfz__legal__list .nfz__list {
+  margin: 1rem 0;
+}
+
+.footer__legal {
+  color: inherit;
+  text-decoration: underline;
+}
+.footer__legal:hover {
+  opacity: 0.8;
+}
+
 /*# sourceMappingURL=index.css.map */
