@@ -4407,4 +4407,44 @@ a.nfz__service:hover {
   opacity: 0.8;
 }
 
+.nfz__gallery {
+  padding: 0;
+  grid-template-columns: repeat(4, 1fr);
+}
+.nfz__gallery a {
+  display: block;
+  height: 280px;
+}
+@media all and (max-width: 1024.7px) {
+  .nfz__gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (tablet) {
+  .nfz__gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (max-width: 480px) {
+  .nfz__gallery {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .nfz__gallery a {
+    height: 200px;
+  }
+}
+
+.nfz__photos--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media all and (max-width: 480px) {
+  .nfz__photos--two {
+    grid-template-columns: 1fr;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

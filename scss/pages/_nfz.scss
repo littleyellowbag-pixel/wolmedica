@@ -1647,3 +1647,39 @@ a.button {
     opacity: 0.8;
   }
 }
+
+// galeria na podstronach NFZ
+
+.nfz__gallery {
+  padding: 0;
+  grid-template-columns: repeat(4, 1fr);
+
+  a {
+    display: block;
+    height: 280px;
+  }
+
+  @include media(tablet) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media(mobile) {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+    a {
+      height: 200px;
+    }
+  }
+}
+
+.nfz__photos--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include media(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
