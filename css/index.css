@@ -4447,4 +4447,9 @@ a.nfz__service:hover {
   }
 }
 
+.nfz__hero__img--contain {
+  height: auto;
+  object-fit: contain;
+}
+
 /*# sourceMappingURL=index.css.map */

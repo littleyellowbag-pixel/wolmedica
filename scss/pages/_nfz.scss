@@ -1683,3 +1683,9 @@ a.button {
     grid-template-columns: 1fr;
   }
 }
+
+// zdjęcie w nagłówku pokazane w całości (np. dwa wejścia obok siebie)
+.nfz__hero__img--contain {
+  height: auto;
+  object-fit: contain;
+}
